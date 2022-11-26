@@ -4,3 +4,28 @@
 .input-flex {
   display: flex;
 }
+.chat-item {
+  background-color: #4462ff;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px 10px 0 10px;
+  max-width: 50%;
+  min-width: 215px;
+}
+.new-chat {
+  background-color: gray;
+  padding: 0 5px;
+  border-radius: 5px;
+  color: white;
+  text-align: left;
+}
+.new-chat p {
+  margin-top: -20px;
+}
+.chat-flex {
+  display: flex;
+  gap: 5px;
+}
+.chat-area {
+  margin-top: 5px;
+}

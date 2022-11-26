@@ -4,7 +4,11 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import "./Chat.css";
-import { Typography } from "@mui/material";
+import {
+  Avatar,
+  Typography,
+} from "@mui/material";
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor:
     theme.palette.mode === "dark"
@@ -16,30 +20,21 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const Chat = () => {
+const ChatBox = ({ user, message, avatar }) => {
   const [getChat, setChat] = React.useState([]);
-
   console.log("get chat", getChat);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.name.value);
     const chats = e.target.name.value;
-    setChat(chats);
+    let chat1 = getChat;
+    chat1.push({ chats });
+    setChat(chat1);
   };
   return (
     <Box
       sx={{ flexGrow: 1, p: 10, height: "100%" }}
     >
       <Grid container spacing={2}>
-        <Grid xs={4}>
-          <Item>Name</Item>
-          <Box
-            sx={{
-              height: "60vh",
-              backgroundColor: "#ebf0ec",
-            }}
-          />
-        </Grid>
         <Grid xs={8}>
           <Box sx={{ boxShadow: 3 }}>
             <Item>Chat</Item>
@@ -49,7 +44,18 @@ const Chat = () => {
                 backgroundColor: "#ddede1",
               }}
             >
-              <Typography>{getChat}</Typography>
+              <div className="chat-flex">
+                <Avatar
+                  alt="Cindy Baker"
+                  src={avatar}
+                />
+                <div className="chat-area">
+                  <div className="new-chat">
+                    <h3>{user}</h3>
+                    <p>{message}</p>
+                  </div>
+                </div>
+              </div>
             </Box>
             <form
               onSubmit={handleSubmit}
@@ -68,4 +74,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default ChatBox;

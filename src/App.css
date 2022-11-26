@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #f5f7fb;
 }
 
 .App-logo {
@@ -13,6 +14,9 @@
   }
 }
 
+.chat-width {
+  background-color: #f0f2f5;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
