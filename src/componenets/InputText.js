@@ -1,22 +1,21 @@
 import React, { useState } from "react";
+import SendIcon from "@mui/icons-material/Send";
 
 const styles = {
   button: {
     width: "10%",
-    height: 50,
+    height: 40,
     fontWeight: "bold",
-    borderRadius: 10,
     fontSize: 18,
-    backgroundColor: "#34b7f1",
+    backgroundColor: "#658FFF",
     borderWidth: 0,
     color: "#fff",
   },
   textarea: {
-    width: "60%",
-    height: 50,
-    borderRadius: 10,
+    width: "100%",
+    height: 30,
     borderWidth: 0,
-    padding: 10,
+    padding: 5,
     fontSize: 18,
   },
   textContainer: {
@@ -29,7 +28,6 @@ const styles = {
 export default function InputText({
   addMessage,
 }) {
-
   // console.log(date);
 
   const [message, setMessage] = useState("");
@@ -43,7 +41,7 @@ export default function InputText({
 
   return (
     <div style={styles.textContainer}>
-      <textarea
+      <input
         style={styles.textarea}
         rows={6}
         placeholder="Write something..."
@@ -51,12 +49,12 @@ export default function InputText({
         onChange={(e) =>
           setMessage(e.target.value)
         }
-      ></textarea>
+      ></input>
       <button
         onClick={() => addAMessage()}
         style={styles.button}
       >
-        ENTER
+        <SendIcon />
       </button>
     </div>
   );

@@ -139,15 +139,15 @@ export default function ChatContainer() {
     //     </div>
     //   </Grid>
     // </Box>
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={3}>
-        <Grid item xs>
-          <LeftUser />
-        </Grid>
-        <Grid item xs={7}>
-          <div className="chat-width1">
-            <div className="chat-width">
-              {user ? (
+    <Box sx={{ flexGrow: 1, p: 5 }}>
+      {user ? (
+        <Grid container spacing={3}>
+          <Grid item xs>
+            <LeftUser user={user} />
+          </Grid>
+          <Grid item xs={8}>
+            <div style={{ marginRight: "40px" }}>
+              <div>
                 <div>
                   <div
                     style={{
@@ -160,6 +160,7 @@ export default function ChatContainer() {
                     <div
                       style={{
                         display: "flex",
+
                         alignItems: "center",
                         gap: "10px",
                       }}
@@ -175,7 +176,7 @@ export default function ChatContainer() {
                         preview={false}
                       />
                       <h4
-                        style={{ color: "white" }}
+                        style={{ color: "gray" }}
                       >
                         {user}
                       </h4>
@@ -186,6 +187,10 @@ export default function ChatContainer() {
                       style={{
                         color: "blue",
                         cursor: "pointer",
+                        border: "solid 1px gray",
+                        padding: "5px",
+                        borderRadius: "10px",
+                        color: "gray",
                       }}
                     >
                       Log Out
@@ -196,13 +201,13 @@ export default function ChatContainer() {
                     addMessage={addAMessage}
                   />
                 </div>
-              ) : (
-                <UserLogin setUser={setUser} />
-              )}
+              </div>
             </div>
-          </div>
+          </Grid>
         </Grid>
-      </Grid>
+      ) : (
+        <UserLogin setUser={setUser} />
+      )}
     </Box>
   );
 }

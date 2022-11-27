@@ -3,6 +3,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import { Box } from "@mui/system";
 
 const date = Date().slice(16, 21);
 
@@ -29,6 +30,7 @@ export default function ChatBoxReciever({
         <div
           style={{
             display: "flex",
+            gap: "5px",
             justifyContent: "flex-start",
             flexDirection: "row",
           }}
@@ -40,30 +42,39 @@ export default function ChatBoxReciever({
                 src={avatar}
                 style={{
                   objectFit: "cover",
-                  width: 45,
-                  height: 45,
+                  width: 35,
+                  height: 35,
                   borderRadius: "100%",
                 }}
                 preview={false}
               />
             }
           />
-          <p
-            style={{
-              padding: 10,
-              backgroundColor: "#dcf8c6",
-              borderRadius: 10,
-              maxWidth: "60%",
-            }}
-          >
-            <strong style={{ fontSize: 13 }}>
-              {user}
-            </strong>{" "}
-            <br></br>
-            {message}
-            <br></br>
-            {date}
-          </p>
+          <Box>
+            <Typography
+              style={{
+                backgroundColor: "#4e426d",
+                borderRadius:
+                  "0px 10px 10px 10px",
+                padding: "2px 6px",
+                textAlign: "right",
+                marginTop: "20px",
+                color: "white",
+              }}
+            >
+              {message}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "10px",
+                textAlign: "right",
+                color: "black",
+              }}
+            >
+              {" "}
+              {date}
+            </Typography>
+          </Box>
         </div>
       </div>
     </div>
@@ -97,26 +108,37 @@ export function ChatBoxSender({
             flexDirection: "row",
           }}
         >
-          <p
+          <div
             style={{
-              padding: 10,
-              backgroundColor: "#4e426d",
-              color: "white",
-              borderRadius: 10,
               maxWidth: "60%",
+              color: "white",
             }}
           >
-            <strong style={{ fontSize: 13 }}>
+            <Typography
+              style={{
+                backgroundColor: "#4e426d",
+                borderRadius: "10px 0 10px 10px",
+                padding: "2px 6px",
+                textAlign: "right",
+              }}
+            >
+              {/* <strong style={{ fontSize: 13 }}>
               {user}
-            </strong>{" "}
-            <br></br>
-            {message}
-            <br></br>
-            <Typography variant="subtitle3">
+            </strong>{" "} */}
+
+              {message}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "10px",
+                textAlign: "right",
+                color: "black",
+              }}
+            >
               {" "}
               {date}
             </Typography>
-          </p>
+          </div>
           {/* <Avatar
             size={50}
             src={

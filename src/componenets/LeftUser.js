@@ -17,7 +17,7 @@ import PhotoRoundedIcon from "@mui/icons-material/PhotoRounded";
 import React from "react";
 import { Box } from "@mui/system";
 
-const LeftUser = () => {
+const LeftUser = ({ user }) => {
   return (
     <div>
       <Grid
@@ -67,10 +67,10 @@ const LeftUser = () => {
         variant="h4"
         sx={{ fontWeight: "bold" }}
       >
-        Jabed H
+        {user}
       </Typography>
       <Typography variant="h5">
-        Jabed H
+        Developer
       </Typography>
       <Grid
         sx={{

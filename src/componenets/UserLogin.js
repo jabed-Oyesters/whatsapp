@@ -3,15 +3,14 @@ import _ from "lodash";
 import { CommentOutlined } from "@mui/icons-material";
 
 const button = {
-  width: "10%",
   height: 50,
   fontWeight: "bold",
   borderRadius: 10,
   fontSize: 18,
-  backgroundColor: "#075e54",
+  backgroundColor: "#658FFF",
   borderWidth: 0,
   color: "#fff",
-  margin: 10,
+  marginTop: "15px",
 };
 
 export default function UserLogin({ setUser }) {
@@ -32,44 +31,42 @@ export default function UserLogin({ setUser }) {
 
   return (
     <div>
-      <h1
-        style={{
-          margin: 10,
-          textAlign: "center",
-        }}
-      >
-        <CommentOutlined color={"green"} /> Super
-        Chat{" "}
-      </h1>
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <input
+      <div style={{ marginTop: "50px" }}>
+        <h1
           style={{
-            margin: 10,
-            height: 30,
-            width: "25%",
-            borderRadius: 10,
-            borderWidth: 10,
-            fontSize: 15,
-            paddingInline: 5,
+            textAlign: "center",
           }}
-          value={user}
-          onChange={(e) =>
-            setAUser(e.target.value)
-          }
-          placeholder="Write a random name"
-        ></input>
-        <button
-          onClick={() => handleSetUser()}
-          style={button}
         >
           Login
-        </button>
+        </h1>
+        <div>
+          <div
+            style={{
+              display: "grid",
+              justifyContent: "center",
+            }}
+          >
+            <input
+              style={{
+                height: 30,
+                fontSize: 15,
+                paddingInline: 5,
+                border: "none",
+              }}
+              value={user}
+              onChange={(e) =>
+                setAUser(e.target.value)
+              }
+              placeholder="Write a name"
+            ></input>
+            <button
+              onClick={() => handleSetUser()}
+              style={button}
+            >
+              Login
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

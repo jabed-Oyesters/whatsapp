@@ -62,11 +62,11 @@ function App() {
   ];
   return (
     <div className="App chat-flex">
-      <Typography
+      {/* <Typography
         sx={{ mt: 5, fontWeight: "bold" }}
       >
         WhatsApp
-      </Typography>
+      </Typography> */}
       <ChatContainer />
     </div>
   );
