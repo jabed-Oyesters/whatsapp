@@ -79,66 +79,7 @@ export default function ChatContainer() {
   }
 
   return (
-    // <Box sx={{ flexGrow: 1 }}>
-    //   <Grid container spacing={3}>
-    //     <div className="chat-width1">
-    //       <div className="chat-width">
-    //         {user ? (
-    //           <div>
-    //             <div
-    //               style={{
-    //                 display: "flex",
-    //                 flexDirection: "row",
-    //                 justifyContent:
-    //                   "space-between",
-    //               }}
-    //             >
-    //               <div
-    //                 style={{
-    //                   display: "flex",
-    //                   alignItems: "center",
-    //                   gap: "10px",
-    //                 }}
-    //               >
-    //                 <img
-    //                   src={avatar}
-    //                   style={{
-    //                     objectFit: "cover",
-    //                     width: 35,
-    //                     height: 35,
-    //                     borderRadius: "100%",
-    //                   }}
-    //                   preview={false}
-    //                 />
-    //                 <h4
-    //                   style={{ color: "white" }}
-    //                 >
-    //                   {user}
-    //                 </h4>
-    //               </div>
-
-    //               <p
-    //                 onClick={() => logout()}
-    //                 style={{
-    //                   color: "blue",
-    //                   cursor: "pointer",
-    //                 }}
-    //               >
-    //                 Log Out
-    //               </p>
-    //             </div>
-    //             <ChatsList />
-    //             <InputText
-    //               addMessage={addAMessage}
-    //             />
-    //           </div>
-    //         ) : (
-    //           <UserLogin setUser={setUser} />
-    //         )}
-    //       </div>
-    //     </div>
-    //   </Grid>
-    // </Box>
+  
     <Box sx={{ flexGrow: 1, p: 5 }}>
       {user ? (
         <Grid container spacing={3}>
